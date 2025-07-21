@@ -8,6 +8,9 @@ import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
 
 @RestController
 
@@ -24,5 +27,12 @@ public class ProfileController {
         ProfileResponse profile = profileService.createProfile(request);
         // TODO : send welcome main
         return profile;
+    }
+
+    
+    @GetMapping("/test")
+    
+    public String test(){
+        return  "API is Working";
     }
 }
